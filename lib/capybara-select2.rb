@@ -7,7 +7,7 @@ module Capybara
       raise "Must pass a hash containing 'from'" if not options.is_a?(Hash) or not options.has_key?(:from)
       select_id = options[:from].gsub(/#/, '') # If the id comes with #, we remove it
       select2_container = find("#s2id_#{select_id}").click
-      find(".select2-drop li", text: value).click
+      page.document.find(".select2-drop-active li", text: value).click
     end
 
     def select2_create_choice(value, options = {})
