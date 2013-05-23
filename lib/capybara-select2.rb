@@ -10,9 +10,9 @@ module Capybara
 
       if options[:ajax]
         find('.select2-drop-active .select2-input').set(value)
-        sleep(1)
       end
 
+      sleep(1)
       page.document.find(".select2-drop-active li", text: value).click
     end
 
